@@ -16,6 +16,14 @@ function readFile(files, callback) {
         fileArr = files.split('/'),
         id = new Date().getTime(),
         fileName = '<a href="javascript:;" class="book" data-id="' + id + '">' + fileArr[fileArr.length - 1] + '<i></i></a>';
+    if (fileName.indexOf('txt') <= -1) {
+        info.content = '格式不支持';
+        info.chapter = '';
+
+        callback && callback(info);
+
+        return;
+    }
 
     fs.readFile(files, function(err, buffer) {
         if (err) {
@@ -40,6 +48,7 @@ function readFile(files, callback) {
 
             dbModel.setBook(info);
         }
+
         callback && callback(info);
     });        
 }
@@ -50,6 +59,7 @@ function openFile() {
         dialog.showOpenDialog({
             properties: ['openFile', 'openDirectory']
         }, function(files) {
+            //打开成功
             if (files && files.length) {
                 let ev = e;
 
@@ -59,6 +69,9 @@ function openFile() {
                     ev.sender.send('selected-directory', info);
                     ev.sender.send('selecting-directory', {status: 'complete'});
                 });
+            //打开失败
+            } else {
+                ev.sender.send('selecting-directory', {status: 'failed'});
             }
         });
     });     

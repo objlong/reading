@@ -39,7 +39,7 @@ bookList.on('click', 'a', function() {
     id = par.data('id');
 
     ipc.send('del-book', id);
-    
+
     spinner.spin(main);
 });
 
@@ -81,8 +81,12 @@ ipc.on('selecting-directory', function(e, data) {
 
         spinner.spin(main);
 
-    } else {
+    } else if (data.status == 'complete') {
         selectBtn.text('选择书籍').removeClass('no');
+
+        spinner.stop();
+    } else {
+        selectBtn.text('打开失败').removeClass('no');
 
         spinner.stop();
     }
