@@ -1,0 +1,30 @@
+{
+  "name": "reading",
+  "version": "1.0.0",
+  "description": "'soft of reading'",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "buildmac": "electron-packager . 'reading' --platform=darwin --arch=x64 --icon=./icon.png --out=../app --asar --app-version=1.0.0 --overwrite",
+    "buildwin": "electron-packager . 'reading' --platform=win32 --arch=x64 --icon=./icon.png --out=../app --asar --app-version=1.0.0 --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:objlong/reading.git"
+  },
+  "keywords": [
+    "reading"
+  ],
+  "author": "objlong",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8",
+    "electron-packager": "^10.1.0"
+  },
+  "dependencies": {
+    "appdirectory": "^0.1.0",
+    "iconv-lite": "^0.4.19",
+    "jschardet": "^1.6.0",
+    "lowdb": "^1.0.0"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="./assets/css/index/index.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="shelf">
+            <a href="javascript:void(0)" data-js="selectBook" class="select_book">选择书籍</a>
+            <div class="book_list" data-js="bookList">
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="panel">
+                <a href="javascript:void(0)" class="panel_btn">面板</a>
+            </div>
+            <div class="chapter_list" data-js="chapterList"></div>
+        </div>
+        <div class="content">
+            <div class="inner_content" data-js="content"></div>
+        </div>
+    </div>
+    <script src="./assets/js/common/jquery.min.js"></script>
+    <script src="./assets/js/common/spin.js"></script>
+    <script>
+        require('./assets/js/renderer.js')
+    </script>
+</body>
+
+</html>
