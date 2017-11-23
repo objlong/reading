@@ -1,10 +1,14 @@
-#electron桌面txt阅读器
-##开始安装
+# electron桌面txt阅读器
+## 开始安装
 ```javascript
 npm install
 npm start
 ```
-##构建mac版
+## 构建mac版
 ```javascript
 npm run buildmac
+```
+## 构建win64版
+```javascript
+npm run buildwin
 ```
