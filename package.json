@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "buildmac": "electron-packager . 'reading' --platform=darwin --arch=x64 --icon=./icon.png --out=../app --asar --app-version=1.0.0 --overwrite",
-    "buildwin": "electron-packager . 'reading' --platform=win32 --arch=x64 --icon=./icon.png --out=../app --asar --app-version=1.0.0 --overwrite"
+    "buildmac": "electron-packager . 'reading' --platform=darwin --arch=x64 --icon=./icon.icns --out=../app --asar --app-version=1.0.0 --overwrite",
+    "buildwin": "electron-packager . 'reading' --platform=win32 --arch=x64 --icon=./icon.ico --out=../app --asar --app-version=1.0.0 --overwrite"
   },
   "repository": {
     "type": "git",
