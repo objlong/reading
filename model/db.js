@@ -1,10 +1,14 @@
 //建立存储区
 var AppDirectory = require('appdirectory');
 var dirs = new AppDirectory('reading');
+//路径
+const path = require('path');
+var myPath = path.normalize(__dirname + '/../userData/db/book.json');
+console.log(myPath);
 //lowdb数据库
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync(dirs.userData() + '/book.json');
+const adapter = new FileSync(myPath);
 const db = low(adapter);
 
 module.exports = {
